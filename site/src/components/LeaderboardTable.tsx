@@ -57,11 +57,15 @@ function GroupTable({ benchmarks, models, total }: { benchmarks: Benchmark[]; mo
           <tr>
             <th className="model-col">Model</th>
             {benchmarks.map((b) => (
-              <th key={b.id} className="num" title={b.description}>
+              <th
+                key={b.id}
+                className="num"
+                title={`${b.metric} (${b.higher_is_better ? "higher" : "lower"} is better): ${b.description}`}
+              >
                 <button type="button" onClick={() => toggle(b)} aria-sort={sort.benchmark === b.id ? (sort.ascending ? "ascending" : "descending") : "none"}>
                   <span className="bench-name">{b.name}</span>
-                  <span className="metric">
-                    {b.metric} {b.higher_is_better ? "↑" : "↓"}
+                  <span className="dir">
+                    {b.higher_is_better ? "↑" : "↓"}
                     {sort.benchmark === b.id ? (sort.ascending ? " ▲" : " ▼") : ""}
                   </span>
                 </button>
