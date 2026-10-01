@@ -33,7 +33,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-main { max-width: 1240px; margin: 0 auto; padding: 56px 24px 72px; }
+main { max-width: 1360px; margin: 0 auto; padding: 56px 24px 72px; }
 
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -61,17 +61,18 @@ section h2 { font-size: 1.15rem; margin: 32px 0 12px; }
 
 .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
 table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
-th, td { padding: 10px 14px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+th, td { padding: 10px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
 tbody tr:last-child td { border-bottom: none; }
 tbody tr:hover { background: var(--soft); }
 thead th { background: var(--soft); font-weight: 600; vertical-align: bottom; }
 th.num, td.num { text-align: right; }
 
 th button {
-  all: unset; cursor: pointer; display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+  all: unset; cursor: pointer; display: inline-flex; align-items: baseline; gap: 4px;
 }
 th button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
-.bench-name { font-size: 0.88rem; }
+.bench-name { font-size: 0.8rem; }
+.dir { font-size: 0.75rem; color: var(--muted); font-weight: 400; }
 .metric { font-size: 0.72rem; color: var(--muted); font-weight: 400; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
 
 .model-col { position: sticky; left: 0; background: var(--bg); z-index: 1; }
