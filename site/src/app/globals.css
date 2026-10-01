@@ -1,0 +1,101 @@
+:root {
+  --bg: #ffffff;
+  --fg: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --soft: #f8fafc;
+  --accent: #4f46e5;
+  --accent-soft: #eef2ff;
+  --radius: 10px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1020;
+    --fg: #e2e8f0;
+    --muted: #94a3b8;
+    --line: #1e293b;
+    --soft: #111827;
+    --accent: #818cf8;
+    --accent-soft: #1e1b4b;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { max-width: 1240px; margin: 0 auto; padding: 56px 24px 72px; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header h1 { font-size: 2rem; letter-spacing: -0.02em; margin: 0 0 12px; }
+.lead { color: var(--muted); max-width: 760px; margin: 0 0 20px; }
+nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
+
+.button {
+  display: inline-block; padding: 8px 14px; border: 1px solid var(--line); border-radius: 8px;
+  color: var(--fg); font-weight: 500;
+}
+.button:hover { background: var(--soft); text-decoration: none; }
+.button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.button.primary:hover { opacity: 0.9; background: var(--accent); }
+
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.chip {
+  font: inherit; font-size: 0.85rem; padding: 5px 12px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: transparent; color: var(--muted);
+}
+.chip.active { background: var(--accent-soft); color: var(--accent); border-color: transparent; font-weight: 600; }
+
+section h2 { font-size: 1.15rem; margin: 32px 0 12px; }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { padding: 10px 14px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: var(--soft); }
+thead th { background: var(--soft); font-weight: 600; vertical-align: bottom; }
+th.num, td.num { text-align: right; }
+
+th button {
+  all: unset; cursor: pointer; display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+}
+th button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+.bench-name { font-size: 0.88rem; }
+.metric { font-size: 0.72rem; color: var(--muted); font-weight: 400; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+.model-col { position: sticky; left: 0; background: var(--bg); z-index: 1; }
+thead .model-col { background: var(--soft); }
+tbody tr:hover .model-col { background: var(--soft); }
+.model-name { display: block; font-weight: 600; color: var(--fg); }
+.model-meta { display: block; font-size: 0.78rem; color: var(--muted); }
+
+.badge { padding: 1px 7px; border-radius: 999px; font-size: 0.72rem; font-weight: 600; }
+.badge.open-weights { background: #dcfce7; color: #166534; }
+.badge.public-api { background: #e0f2fe; color: #075985; }
+.badge.private { background: #f1f5f9; color: #475569; }
+@media (prefers-color-scheme: dark) {
+  .badge.open-weights { background: #14532d; color: #bbf7d0; }
+  .badge.public-api { background: #0c4a6e; color: #bae6fd; }
+  .badge.private { background: #1e293b; color: #cbd5e1; }
+}
+
+td.best { font-weight: 700; color: var(--accent); }
+td.empty { color: var(--muted); }
+.empty-state { color: var(--muted); }
+
+.about dl { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px 28px; margin: 0; }
+.about dt { font-weight: 600; }
+.about dd { margin: 2px 0 0; color: var(--muted); font-size: 0.9rem; }
+
+footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }

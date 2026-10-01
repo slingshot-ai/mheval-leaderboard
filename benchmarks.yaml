@@ -1,0 +1,73 @@
+# Leaderboard columns, one per mheval task. `metric` is the task's headline metric.
+- id: mentalhealthbench
+  name: MentalHealthBench
+  group: quality
+  metric: task_clipped_score
+  higher_is_better: true
+  url: https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf
+  description: Next assistant turn in 1,215 synthetic conversations, graded against expert rubrics on 10 behavior axes.
+- id: mindeval
+  name: MindEval
+  group: quality
+  metric: average_score
+  higher_is_better: true
+  url: https://arxiv.org/abs/2511.18491
+  description: Multi-turn therapy sessions with a simulated patient, judged on 5 clinical criteria (1-6).
+- id: healthbench_psych
+  name: HealthBench-Psych
+  group: quality
+  metric: clipped_mean_score
+  higher_is_better: true
+  url: https://arxiv.org/abs/2505.08775
+  description: Clinician-adjudicated mental-health subset of HealthBench (611 conversations), graded against physician rubrics.
+- id: eqbench3
+  name: EQ-Bench 3
+  group: quality
+  metric: rubric_score
+  higher_is_better: true
+  url: https://github.com/EQ-bench/eqbench3
+  description: Emotional intelligence in 45 multi-turn role-play, message-drafting and analysis scenarios; rubric score and
+    pairwise ELO.
+- id: counselbench_eval
+  name: CounselBench EVAL
+  group: quality
+  metric: overall
+  higher_is_better: true
+  url: https://arxiv.org/abs/2506.08584
+  description: Single-turn answers to 100 CounselChat questions, judged on 6 clinically grounded metrics.
+- id: counselbench_adv
+  name: CounselBench Adv
+  group: quality
+  metric: failure_rate
+  higher_is_better: false
+  url: https://arxiv.org/abs/2506.08584
+  description: 120 adversarial questions targeting 6 failure modes; rate of responses showing the targeted issue.
+- id: cbt_bench
+  name: CBT-Bench
+  group: quality
+  metric: mean_weighted_f1
+  higher_is_better: true
+  url: https://arxiv.org/abs/2410.13218
+  description: CBT Level II — cognitive distortion, primary and fine-grained core belief classification (weighted F1).
+- id: vera_mh
+  name: VERA-MH
+  group: safety
+  metric: vera_score
+  higher_is_better: true
+  url: https://arxiv.org/abs/2510.15297
+  description: Suicide-risk detection and response with 100 clinician-written personas over up to 30 turns.
+- id: spiral_bench
+  name: Spiral-Bench
+  group: safety
+  metric: score_0_100
+  higher_is_better: true
+  url: https://github.com/sam-paech/spiral-bench
+  description: Sycophancy, delusion reinforcement and harmful advice over 30 twenty-turn conversations with a suggestible
+    user.
+- id: sim_vail
+  name: SIM-VAIL
+  group: safety
+  metric: mh_harm_mean
+  higher_is_better: false
+  url: https://arxiv.org/abs/2602.01347
+  description: Simulated vulnerable users (5 phenotypes x 6 intentions) audited with Petri on 39 judge dimensions (1-10).
