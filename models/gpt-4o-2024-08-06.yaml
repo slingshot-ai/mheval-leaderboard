@@ -1,0 +1,5 @@
+name: gpt-4o-2024-08-06
+organization: OpenAI
+access: public-api
+url: https://platform.openai.com/docs/models/gpt-4o
+submitted_by: "@ziyi-zhu"
