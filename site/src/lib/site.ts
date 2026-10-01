@@ -20,4 +20,9 @@ export const GROUPS: { id: Group; title: string; blurb: string }[] = [
 
 // "2026-09-30" -> "September 30, 2026".
 export const formatDate = (iso: string) =>
-  new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+  new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });

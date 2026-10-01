@@ -1,4 +1,3 @@
-// The header every view shares: eyebrow, title, a short lede, optional extra content, and facts as label/value pairs.
 export function PageHeader({
   eyebrow,
   title,

@@ -2,12 +2,13 @@ import type { Benchmark, Model } from "@/lib/data";
 import { formatScore } from "@/lib/format";
 import { ModelName } from "./ModelName";
 
-// Ranked horizontal bars of a benchmark's headline metric (for models with a result), drawn on the metric's full
-// scale. Bars grow in on mount, staggered by rank.
+// Ranked bars of the headline metric, drawn on the metric's full scale.
 export function BarChart({ benchmark, models }: { benchmark: Benchmark; models: Model[] }) {
   const [lo, hi] = benchmark.range;
-  const rows = [...models].sort((a, b) => (b.scores[benchmark.id] - a.scores[benchmark.id]) * (benchmark.higher_is_better ? 1 : -1));
-  const scale = Math.max(...rows.map((m) => Math.abs(m.scores[benchmark.id]))); // same decimals as the tables
+  const rows = [...models].sort(
+    (a, b) => (b.scores[benchmark.id] - a.scores[benchmark.id]) * (benchmark.higher_is_better ? 1 : -1),
+  );
+  const scale = Math.max(...rows.map((m) => Math.abs(m.scores[benchmark.id])));
 
   return (
     <div className="bars">

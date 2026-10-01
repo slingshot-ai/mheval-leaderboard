@@ -9,15 +9,13 @@ export interface ScoreColumn {
   key: string;
   label: string;
   title?: string;
-  higher_is_better: boolean | null; // null: descriptive, so no shading, bold or direction
+  higher_is_better: boolean | null; // null: descriptive
   value: (m: Model) => number | undefined;
   format?: (v: number, scale: number) => string;
 }
 
-
-// Sortable model x column table. Cells are shaded by rank within their column (a heatmap, in each column's own
-// direction) and the best value is bold, so the ordering never relies on color alone. Descriptive columns
-// (no better direction) are left plain and sort high to low.
+// Sortable table, cells shaded by rank within each column with the best in bold. Descriptive columns (no better
+// direction) are left plain.
 export function ScoreTable({ models, columns }: { models: Model[]; columns: ScoreColumn[] }) {
   const [sort, setSort] = useState({ key: columns[0].key, flip: false });
 
@@ -27,8 +25,8 @@ export function ScoreTable({ models, columns }: { models: Model[]; columns: Scor
       return [c.key, { min: Math.min(...values), max: Math.max(...values), scale: Math.max(...values.map(Math.abs)) }];
     }),
   );
-  // 0 = worst in column, 1 = best (for descriptive columns: 0 = lowest, 1 = highest).
   const show = (c: ScoreColumn, v: number) => (c.format ?? formatScore)(v, stats.get(c.key)!.scale);
+  // 0 = worst in the column, 1 = best (lowest to highest for descriptive columns).
   const rank = (c: ScoreColumn, v: number) => {
     const { min, max } = stats.get(c.key)!;
     if (max === min) return 1;
@@ -37,6 +35,8 @@ export function ScoreTable({ models, columns }: { models: Model[]; columns: Scor
   };
 
   const active = columns.find((c) => c.key === sort.key) ?? columns[0];
+  // Rows run best first, so whether that is ascending depends on the column's direction.
+  const order = (c: ScoreColumn) => ((c.higher_is_better !== false) !== sort.flip ? "descending" : "ascending");
   const rows = [...models].sort((a, b) => {
     const x = active.value(a);
     const y = active.value(b);
@@ -52,10 +52,18 @@ export function ScoreTable({ models, columns }: { models: Model[]; columns: Scor
           <tr>
             <th className="model-col">Model</th>
             {columns.map((c) => (
-              <th key={c.key} className="num" title={c.title} aria-sort={c.key === sort.key ? (sort.flip ? "ascending" : "descending") : undefined}>
-                <button type="button" className="link" onClick={() => setSort((s) => ({ key: c.key, flip: s.key === c.key && !s.flip }))}>
+              <th key={c.key} className="num" title={c.title} aria-sort={c.key === sort.key ? order(c) : undefined}>
+                <button
+                  type="button"
+                  className="link"
+                  onClick={() => setSort((s) => ({ key: c.key, flip: s.key === c.key && !s.flip }))}
+                >
                   {c.label.replace(/-/g, "\u2011")}
-                  {c.higher_is_better !== null && <span className="dir" aria-hidden>{c.higher_is_better ? "\u00a0↑" : "\u00a0↓"}</span>}
+                  {c.higher_is_better !== null && (
+                    <span className="dir" aria-hidden>
+                      {c.higher_is_better ? "\u00a0↑" : "\u00a0↓"}
+                    </span>
+                  )}
                 </button>
               </th>
             ))}
@@ -69,11 +77,25 @@ export function ScoreTable({ models, columns }: { models: Model[]; columns: Scor
               </td>
               {columns.map((c) => {
                 const v = c.value(m);
-                if (v === undefined) return <td key={c.key} className="num empty">–</td>;
-                if (c.higher_is_better === null) return <td key={c.key} className="num">{show(c, v)}</td>;
+                if (v === undefined)
+                  return (
+                    <td key={c.key} className="num empty">
+                      –
+                    </td>
+                  );
+                if (c.higher_is_better === null)
+                  return (
+                    <td key={c.key} className="num">
+                      {show(c, v)}
+                    </td>
+                  );
                 const r = rank(c, v);
                 return (
-                  <td key={c.key} className={r === 1 ? "num best" : "num"} style={{ "--heat": `${Math.round(r * 100)}%` } as React.CSSProperties}>
+                  <td
+                    key={c.key}
+                    className={r === 1 ? "num best" : "num"}
+                    style={{ "--heat": `${Math.round(r * 100)}%` } as React.CSSProperties}
+                  >
                     {show(c, v)}
                   </td>
                 );
