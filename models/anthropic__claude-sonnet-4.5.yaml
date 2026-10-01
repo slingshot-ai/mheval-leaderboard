@@ -1,0 +1,5 @@
+name: anthropic/claude-sonnet-4.5
+organization: Anthropic
+access: public-api
+url: https://www.anthropic.com/claude/sonnet
+submitted_by: "@ziyi-zhu"
