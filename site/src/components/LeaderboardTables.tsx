@@ -12,8 +12,7 @@ const CAPTIONS = {
   safety: "Read as above. SIM-VAIL measures harm, so lower is better.",
 };
 
-// HELM-style mean win rate: the share of head-to-head comparisons a model wins (ties count half) across the
-// benchmarks it has results for. Comparable across benchmarks with different scales and directions.
+// HELM-style mean win rate: the share of head-to-head comparisons a model wins (ties count half).
 function winRates(benchmarks: Benchmark[], models: Model[]): Map<string, number> {
   const out = new Map<string, number>();
   for (const m of models) {
@@ -26,7 +25,7 @@ function winRates(benchmarks: Benchmark[], models: Model[]): Map<string, number>
         const y = o.scores[b.id];
         if (o === m || y === undefined) continue;
         played += 1;
-        won += x === y ? 0.5 : (x > y) === b.higher_is_better ? 1 : 0;
+        won += x === y ? 0.5 : x > y === b.higher_is_better ? 1 : 0;
       }
     }
     if (played) out.set(m.id, won / played);
@@ -34,8 +33,7 @@ function winRates(benchmarks: Benchmark[], models: Model[]): Map<string, number>
   return out;
 }
 
-// The leaderboard: one table per group, ranked by win rate, filterable by model access. Win rates are computed
-// over all models so that filtering does not change them.
+// Win rates use all models, so filtering does not change them.
 export function LeaderboardTables({ benchmarks, models }: { benchmarks: Benchmark[]; models: Model[] }) {
   return (
     <AccessFilter models={models}>

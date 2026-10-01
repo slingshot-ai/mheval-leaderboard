@@ -12,7 +12,8 @@ const serif = Libertinus_Serif({ subsets: ["latin"], weight: "400", variable: "-
 
 export const metadata: Metadata = {
   title: { default: "Mental Health Evaluation Leaderboard", template: "%s · Mental Health Evaluation Leaderboard" },
-  description: "Language models on published therapy and mental-health benchmarks, run with the Mental Health Evaluation Harness.",
+  description:
+    "Language models on published therapy and mental-health benchmarks, run with the Mental Health Evaluation Harness.",
 };
 
 // GitHub's mark (Octicons, MIT), drawn in the current text color.
@@ -30,7 +31,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${sans.variable} ${serif.variable}`}>
       <body>
         <header className="topbar">
-          <Link href="/" className="wordmark">mheval</Link>
+          <Link href="/" className="wordmark">
+            mheval
+          </Link>
           <SiteNav benchmarks={benchmarks} />
           <a className="button submit" href={SUBMIT} aria-label="Submit results on GitHub">
             <GitHubMark />

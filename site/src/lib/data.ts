@@ -62,7 +62,7 @@ interface ViewSpec {
 
 type Json = Record<string, unknown>;
 
-const readYaml = <T,>(file: string): T => parse(fs.readFileSync(file, "utf8")) as T;
+const readYaml = <T>(file: string): T => parse(fs.readFileSync(file, "utf8")) as T;
 
 // "high_acuity" -> "High acuity", "DEPRESSION" -> "Depression", "OCD" stays; labels that already read well are kept.
 function label(key: string): string {
@@ -85,9 +85,10 @@ function extract(result: Json, spec: ViewSpec): Record<string, number> {
   return out;
 }
 
-// Memoised: every page and its metadata read the same files.
 export const loadLeaderboard = cache((): Leaderboard => {
-  const specs = readYaml<(Omit<Benchmark, "views"> & { breakdowns?: ViewSpec[] })[]>(path.join(ROOT, "benchmarks.yaml"));
+  const specs = readYaml<(Omit<Benchmark, "views"> & { breakdowns?: ViewSpec[] })[]>(
+    path.join(ROOT, "benchmarks.yaml"),
+  );
   const modelsDir = path.join(ROOT, "models");
   let updated = "";
 

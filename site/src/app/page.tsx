@@ -11,8 +11,6 @@ export default function LeaderboardPage() {
         title="Mental Health Evaluation Leaderboard"
         lede="People increasingly turn to AI for support with their mental health. This leaderboard puts the field's clinician-designed benchmarks side by side, run exactly as their authors published them, so models can be compared on the quality of their care and on their safety."
         facts={[
-          { label: "Models", value: models.length },
-          { label: "Benchmarks", value: benchmarks.length },
           { label: "Harness", value: <a href={HARNESS}>mheval ↗</a> },
           ...(updated ? [{ label: "Updated", value: formatDate(updated) }] : []),
         ]}
