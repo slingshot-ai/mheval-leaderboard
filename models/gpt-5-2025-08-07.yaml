@@ -1,0 +1,5 @@
+name: gpt-5-2025-08-07
+organization: OpenAI
+access: public-api
+url: https://platform.openai.com/docs/models/gpt-5
+submitted_by: "@ziyi-zhu"

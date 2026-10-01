@@ -1,0 +1,185 @@
+{
+  "metrics": {
+    "task_clipped_score": 0.4436702988182809,
+    "task_clipped_score_stderr": 0.009896259001394157,
+    "signed_score": 0.2619997116349819,
+    "positive_points_earned": 0.6527390059407886,
+    "normalized_penalty_burden": 0.3907392943058068
+  },
+  "breakdown": {
+    "behavior_axis": {
+      "actionable_guidance_and_coping_strategies": {
+        "signed": 0.03029190491803928,
+        "positive_contribution": 0.24254163854681035,
+        "penalty_burden": 0.21224973362877103,
+        "n": 2552
+      },
+      "clinical_reasoning_and_health_accuracy": {
+        "signed": 0.09163107290079978,
+        "positive_contribution": 0.27437808639899447,
+        "penalty_burden": 0.1827470134981947,
+        "n": 1756
+      },
+      "collaboration_and_user_agency": {
+        "signed": 0.08730651288169854,
+        "positive_contribution": 0.20995969590518068,
+        "penalty_burden": 0.12265318302348217,
+        "n": 504
+      },
+      "communication_and_writing": {
+        "signed": -0.10733385730099583,
+        "positive_contribution": 0.02190237298932951,
+        "penalty_burden": 0.12923623029032533,
+        "n": 184
+      },
+      "context_seeking_and_assessment": {
+        "signed": 0.22120592221708352,
+        "positive_contribution": 0.2339285803076656,
+        "penalty_burden": 0.01272265809058211,
+        "n": 3232
+      },
+      "dual_use_refusals_and_harm_avoidance": {
+        "signed": -0.11394346516557918,
+        "positive_contribution": 0.18320214836303897,
+        "penalty_burden": 0.2971456135286182,
+        "n": 468
+      },
+      "empathy_emotional_attunement_and_support": {
+        "signed": 0.24323179886642127,
+        "positive_contribution": 0.2813650189703248,
+        "penalty_burden": 0.038133220103903485,
+        "n": 1900
+      },
+      "interpretation_and_cognitive_reframing": {
+        "signed": -0.046334015630659905,
+        "positive_contribution": 0.20312644186011913,
+        "penalty_burden": 0.24946045749077903,
+        "n": 1456
+      },
+      "over_alarmism_and_under_response": {
+        "signed": 0.04144433803839272,
+        "positive_contribution": 0.19874778031138998,
+        "penalty_burden": 0.1573034422729973,
+        "n": 872
+      },
+      "unsupported_belief_and_reality_testing_calibration": {
+        "signed": -0.11267004465909163,
+        "positive_contribution": 0.16054998260515319,
+        "penalty_burden": 0.2732200272642448,
+        "n": 724
+      }
+    },
+    "acuity": {
+      "emergent": {
+        "task_clipped_score": 0.4606890803980829,
+        "n": 344
+      },
+      "high_acuity": {
+        "task_clipped_score": 0.5107534036665482,
+        "n": 221
+      },
+      "non_acute": {
+        "task_clipped_score": 0.41185518030302093,
+        "n": 650
+      }
+    },
+    "user_profile": {
+      "adult": {
+        "task_clipped_score": 0.415368777408508,
+        "n": 828
+      },
+      "caregiver": {
+        "task_clipped_score": 0.6043728897258439,
+        "n": 60
+      },
+      "clinician": {
+        "task_clipped_score": 0.5048867746746111,
+        "n": 70
+      },
+      "teen": {
+        "task_clipped_score": 0.48065999128090753,
+        "n": 257
+      }
+    },
+    "language": {
+      "ar": {
+        "task_clipped_score": 0.49293269453133315,
+        "n": 34
+      },
+      "de": {
+        "task_clipped_score": 0.5046406650975559,
+        "n": 25
+      },
+      "en": {
+        "task_clipped_score": 0.4575490417483671,
+        "n": 903
+      },
+      "es": {
+        "task_clipped_score": 0.3144204527086291,
+        "n": 105
+      },
+      "fa": {
+        "task_clipped_score": 0.4643185094789202,
+        "n": 17
+      },
+      "hi": {
+        "task_clipped_score": 0.454043423911117,
+        "n": 54
+      },
+      "id": {
+        "task_clipped_score": 0.5057772425338021,
+        "n": 17
+      },
+      "it": {
+        "task_clipped_score": 0.2462906701141995,
+        "n": 17
+      },
+      "pt": {
+        "task_clipped_score": 0.5150399586395914,
+        "n": 29
+      },
+      "tr": {
+        "task_clipped_score": 0.2111292093553367,
+        "n": 13
+      },
+      "zh": {
+        "task_clipped_score": 0.625,
+        "n": 1
+      }
+    },
+    "has_prior_context": {
+      "False": {
+        "task_clipped_score": 0.4432915397464288,
+        "n": 1145
+      },
+      "True": {
+        "task_clipped_score": 0.44986571506500433,
+        "n": 70
+      }
+    }
+  },
+  "n": 1215,
+  "meta": {
+    "mheval_version": "0.1.0",
+    "task": "mentalhealthbench",
+    "task_sha256": "f7e6ec207ffe4232d4e269bcdb8e25c1927e92c544541295717b49641dd69b9b",
+    "roles": {
+      "target": {
+        "model": "gpt-5-2025-08-07",
+        "params": {}
+      },
+      "judge": {
+        "model": "gpt-5.6-sol",
+        "params": {
+          "reasoning_effort": "high"
+        }
+      }
+    },
+    "task_args": {
+      "n_samples": 4,
+      "workers": 32
+    },
+    "limit": null,
+    "date": "2026-09-29"
+  }
+}
