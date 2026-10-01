@@ -1,0 +1,81 @@
+{
+  "metrics": {
+    "clipped_mean_score": 0.4334675932471634
+  },
+  "breakdown": {
+    "axis": {
+      "accuracy": {
+        "clipped_mean_score": 0.5947913990310313,
+        "n": 489
+      },
+      "communication_quality": {
+        "clipped_mean_score": 0.6852993300472019,
+        "n": 283
+      },
+      "completeness": {
+        "clipped_mean_score": 0.37305752685396937,
+        "n": 522
+      },
+      "context_awareness": {
+        "clipped_mean_score": 0.2571303275893196,
+        "n": 425
+      },
+      "instruction_following": {
+        "clipped_mean_score": 0.5616915558114521,
+        "n": 116
+      }
+    },
+    "theme": {
+      "communication": {
+        "clipped_mean_score": 0.4933904492192482,
+        "n": 122
+      },
+      "complex_responses": {
+        "clipped_mean_score": 0.49092442021980803,
+        "n": 27
+      },
+      "context_seeking": {
+        "clipped_mean_score": 0.3029858040157541,
+        "n": 103
+      },
+      "emergency_referrals": {
+        "clipped_mean_score": 0.61811606240203,
+        "n": 47
+      },
+      "global_health": {
+        "clipped_mean_score": 0.3122031967886979,
+        "n": 90
+      },
+      "health_data_tasks": {
+        "clipped_mean_score": 0.3737304387201728,
+        "n": 65
+      },
+      "hedging": {
+        "clipped_mean_score": 0.5015945627326216,
+        "n": 157
+      }
+    }
+  },
+  "n": 611,
+  "meta": {
+    "mheval_version": "0.1.0",
+    "task": "healthbench_psych",
+    "task_sha256": "073d7e0876cba5f9335f2fc45b19c9392ff06d728125478764f3ec80380d606b",
+    "roles": {
+      "target": {
+        "model": "anthropic/claude-sonnet-4.5",
+        "params": {}
+      },
+      "judge": {
+        "model": "gpt-4.1-2025-04-14",
+        "params": {}
+      }
+    },
+    "task_args": {
+      "subset": "healthbench-psych-v2",
+      "workers": 16
+    },
+    "limit": null,
+    "date": "2026-09-29"
+  }
+}

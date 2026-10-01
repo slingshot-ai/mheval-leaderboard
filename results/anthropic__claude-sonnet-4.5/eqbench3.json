@@ -1,0 +1,138 @@
+{
+  "metrics": {
+    "rubric_score": 72.35000000000001,
+    "elo_normalized": 1514.08,
+    "elo_raw": 1286.1,
+    "ci_low_norm": 1485.93,
+    "ci_high_norm": 1542.28
+  },
+  "breakdown": {
+    "scenario_type": {
+      "analysis": {
+        "rubric_score": 75.65,
+        "n": 19
+      },
+      "message_drafting": {
+        "rubric_score": 65.85,
+        "n": 1
+      },
+      "roleplay": {
+        "rubric_score": 70.05,
+        "n": 25
+      }
+    },
+    "criterion": {
+      "analytical": {
+        "mean_0_20": 17.46153846153846,
+        "n": 26
+      },
+      "boundary_setting": {
+        "mean_0_20": 14.346153846153847,
+        "n": 26
+      },
+      "challenging": {
+        "mean_0_20": 14.307692307692308,
+        "n": 26
+      },
+      "compliant": {
+        "mean_0_20": 8.846153846153847,
+        "n": 26
+      },
+      "conversational": {
+        "mean_0_20": 10.26923076923077,
+        "n": 26
+      },
+      "correctness": {
+        "mean_0_20": 13.842105263157896,
+        "n": 19
+      },
+      "demonstrated_empathy": {
+        "mean_0_20": 13.807692307692308,
+        "n": 26
+      },
+      "depth_of_insight": {
+        "mean_0_20": 16.755555555555556,
+        "n": 45
+      },
+      "emotional_reasoning": {
+        "mean_0_20": 15.644444444444444,
+        "n": 45
+      },
+      "humanlike": {
+        "mean_0_20": 13.461538461538462,
+        "n": 26
+      },
+      "intellectual_grounding": {
+        "mean_0_20": 14.526315789473685,
+        "n": 19
+      },
+      "message_tailoring": {
+        "mean_0_20": 11.615384615384615,
+        "n": 26
+      },
+      "moralising": {
+        "mean_0_20": 11.26923076923077,
+        "n": 26
+      },
+      "pragmatic_ei": {
+        "mean_0_20": 13.192307692307692,
+        "n": 26
+      },
+      "reactive": {
+        "mean_0_20": 11.307692307692308,
+        "n": 26
+      },
+      "safety_conscious": {
+        "mean_0_20": 12.923076923076923,
+        "n": 26
+      },
+      "social_dexterity": {
+        "mean_0_20": 11.73076923076923,
+        "n": 26
+      },
+      "subtext_identification": {
+        "mean_0_20": 16.789473684210527,
+        "n": 19
+      },
+      "sycophantic": {
+        "mean_0_20": 2.769230769230769,
+        "n": 26
+      },
+      "theory_of_mind": {
+        "mean_0_20": 14.789473684210526,
+        "n": 19
+      },
+      "validating": {
+        "mean_0_20": 11.423076923076923,
+        "n": 26
+      },
+      "warmth": {
+        "mean_0_20": 11.076923076923077,
+        "n": 26
+      }
+    }
+  },
+  "n": 45,
+  "meta": {
+    "mheval_version": "0.1.0",
+    "task": "eqbench3",
+    "task_sha256": "24ef0b311d777a65ad469fdff9f5a099b766118bbdc0528d501bb550d1c0ba5c",
+    "roles": {
+      "target": {
+        "model": "anthropic/claude-sonnet-4.5",
+        "params": {}
+      },
+      "judge": {
+        "model": "anthropic/claude-opus-4.6",
+        "params": {}
+      }
+    },
+    "task_args": {
+      "elo": true,
+      "iterations": 1,
+      "threads": 8
+    },
+    "limit": null,
+    "date": "2026-09-29"
+  }
+}

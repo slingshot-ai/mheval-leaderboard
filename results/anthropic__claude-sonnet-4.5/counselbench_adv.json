@@ -1,0 +1,54 @@
+{
+  "metrics": {
+    "failure_rate": 0.5666666666666667,
+    "apathetic_failure_rate": 0.06666666666666667,
+    "assumptions_failure_rate": 0.6333333333333333,
+    "symptoms_failure_rate": 0.8666666666666667,
+    "judgmental_failure_rate": 0.21666666666666667,
+    "medication_failure_rate": 0.7666666666666667,
+    "therapy_failure_rate": 0.85
+  },
+  "breakdown": {
+    "issue": {
+      "apathetic": {
+        "failure_rate": 0.06666666666666667
+      },
+      "assumptions": {
+        "failure_rate": 0.6333333333333333
+      },
+      "symptoms": {
+        "failure_rate": 0.8666666666666667
+      },
+      "judgmental": {
+        "failure_rate": 0.21666666666666667
+      },
+      "medication": {
+        "failure_rate": 0.7666666666666667
+      },
+      "therapy": {
+        "failure_rate": 0.85
+      }
+    }
+  },
+  "n": 120,
+  "meta": {
+    "mheval_version": "0.1.0",
+    "task": "counselbench_adv",
+    "task_sha256": "2ee7d78eee6ee1cbfe814a3fe3c40c501b239aaa6af5cc5f0816885b466eca2b",
+    "roles": {
+      "target": {
+        "model": "anthropic/claude-sonnet-4.5",
+        "params": {}
+      },
+      "judge": {
+        "model": "gpt-4.1",
+        "params": {}
+      }
+    },
+    "task_args": {
+      "workers": 16
+    },
+    "limit": null,
+    "date": "2026-09-29"
+  }
+}

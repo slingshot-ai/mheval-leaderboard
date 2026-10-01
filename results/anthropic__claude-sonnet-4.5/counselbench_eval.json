@@ -1,0 +1,118 @@
+{
+  "metrics": {
+    "overall": 5,
+    "empathy": 4.93,
+    "specificity": 5,
+    "medical_advice": 0.31,
+    "factual_consistency": 4,
+    "toxicity": 1,
+    "judge_parse_failures": 0
+  },
+  "breakdown": {
+    "topic": {
+      "anger-management": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "anxiety": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "behavioral-change": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "counseling-fundamentals": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "depression": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "domestic-violence": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "eating-disorders": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "family-conflict": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "grief-and-loss": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "legal-regulatory": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "marriage": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "parenting": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "professional-ethics": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "relationship-dissolution": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "relationships": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "self-esteem": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "social-relationships": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "substance-abuse": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "trauma": {
+        "overall": 5.0,
+        "n": 5
+      },
+      "workplace-relationships": {
+        "overall": 5.0,
+        "n": 5
+      }
+    }
+  },
+  "n": 100,
+  "meta": {
+    "mheval_version": "0.1.0",
+    "task": "counselbench_eval",
+    "task_sha256": "2ee7d78eee6ee1cbfe814a3fe3c40c501b239aaa6af5cc5f0816885b466eca2b",
+    "roles": {
+      "target": {
+        "model": "anthropic/claude-sonnet-4.5",
+        "params": {}
+      },
+      "judge": {
+        "model": "gpt-4.1",
+        "params": {}
+      }
+    },
+    "task_args": {
+      "temperature": 0.7,
+      "length_constrained": true,
+      "workers": 16
+    },
+    "limit": null,
+    "date": "2026-09-29"
+  }
+}
