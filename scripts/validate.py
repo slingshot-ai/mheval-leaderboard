@@ -114,7 +114,8 @@ def main() -> int:
     releases: dict = {}
     for result in sorted((ROOT / "results").glob("*/*.json")):
         problems[str(result.relative_to(ROOT))] = check_result(result, benchmarks, releases)
-    for stray in sorted(p for p in (ROOT / "results").rglob("*") if p.is_file() and p.suffix != ".json"):
+    strays = (p for p in (ROOT / "results").rglob("*") if p.is_file() and p.suffix != ".json" and p.name != ".gitkeep")
+    for stray in sorted(strays):
         problems[str(stray.relative_to(ROOT))] = ["only results/<model>/<task>.json files are allowed"]
     failed = {f: e for f, e in problems.items() if e}
     for f, errors in failed.items():
