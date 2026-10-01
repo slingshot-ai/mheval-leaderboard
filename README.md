@@ -78,7 +78,7 @@ A maintainer reviews and merges passing pull requests. Results are self-reported
 ## Repository layout
 
 ```
-benchmarks.yaml                # leaderboard columns: benchmark, group, headline metric, direction
+benchmarks.yaml                # benchmarks: group, headline metric and scale, description, breakdown views
 models/<model>.yaml            # one model card per model
 results/<model>/<task>.json    # one result per (model, benchmark), as written by mheval
 scripts/validate.py            # submission checks (run by CI)
