@@ -32,7 +32,6 @@ export default async function BenchmarkPage({ params }: Props) {
         facts={[
           { label: "Metric", value: <span title={b.metric}>{b.metric_name}</span> },
           { label: "Scale", value: `${b.range[0]}–${b.range[1]}` },
-          { label: "Better", value: b.higher_is_better ? "Higher" : "Lower" },
           {
             label: "Source",
             value: <a href={b.url}>{b.url.includes("github.com") ? "GitHub ↗" : "Paper ↗"}</a>,
