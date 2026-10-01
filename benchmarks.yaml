@@ -1,73 +1,208 @@
-# Leaderboard columns, one per mheval task. `metric` is the task's headline metric.
+# Leaderboard benchmarks, one per mheval task. `metric` is the headline metric (`metric_name` its display name)
+# and `range` its scale. `quote` is a short excerpt from the benchmark's paper or README, credited to `quote_source`.
+# `breakdowns` are the sub-category views on each benchmark's page: `path` points into the result JSON
+# (to an object of categories), `value` picks a field of each category, and `columns` optionally selects
+# and labels categories (default: all, labelled from their keys). Views inherit `higher_is_better`;
+# `null` marks descriptive measures with no better direction (shown unshaded).
 - id: mentalhealthbench
   name: MentalHealthBench
   group: quality
   metric: task_clipped_score
+  metric_name: Clipped task score
   higher_is_better: true
+  range: [0, 1]
   url: https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf
-  description: Next assistant turn in 1,215 synthetic conversations, graded against expert rubrics on 10 behavior axes.
+  description: "How well a model handles realistic mental-health conversations, from everyday well-being to emergencies, graded against rubrics written by licensed clinicians."
+  quote: "MentalHealthBench is designed to better represent real-world AI mental health usage, spanning the range of acuities, conversational topics, and user profiles such as teens, adults, caregivers, and clinicians across multiple languages and cultural contexts."
+  quote_source: "Malik et al., OpenAI"
+  breakdowns:
+    - {title: Acuity, path: breakdown.acuity, value: task_clipped_score}
+    - {title: User profile, path: breakdown.user_profile, value: task_clipped_score}
+    - title: Behavior axis (signed score)
+      path: breakdown.behavior_axis
+      value: signed
+      columns:
+        actionable_guidance_and_coping_strategies: Guidance and coping
+        clinical_reasoning_and_health_accuracy: Clinical reasoning
+        collaboration_and_user_agency: User agency
+        communication_and_writing: Communication
+        context_seeking_and_assessment: Context seeking
+        dual_use_refusals_and_harm_avoidance: Harm avoidance
+        empathy_emotional_attunement_and_support: Empathy
+        interpretation_and_cognitive_reframing: Reframing
+        over_alarmism_and_under_response: Calibrated alarm
+        unsupported_belief_and_reality_testing_calibration: Reality testing
 - id: mindeval
   name: MindEval
   group: quality
   metric: average_score
+  metric_name: Average score
   higher_is_better: true
+  range: [1, 6]
   url: https://arxiv.org/abs/2511.18491
-  description: Multi-turn therapy sessions with a simulated patient, judged on 5 clinical criteria (1-6).
+  description: "How a model holds up as a therapist across a full multi-turn session with a simulated patient, judged on five clinical criteria."
+  quote: "A framework designed in collaboration with Ph.D-level Licensed Clinical Psychologists for automatically evaluating language models in realistic, multi-turn mental health therapy conversations."
+  quote_source: "Pombal et al., 2025"
+  breakdowns:
+    - title: Clinical criteria (1-6)
+      path: breakdown.dimension
+      value: mean
+      columns:
+        clinical_accuracy_and_competence: Clinical accuracy
+        ethical_and_professional_conduct: Professional conduct
+        assessment_and_response: Assessment and response
+        therapeutic_relationship_and_alliance: Therapeutic alliance
+        ai_specific_communication_quality: AI communication
 - id: healthbench_psych
   name: HealthBench-Psych
   group: quality
   metric: clipped_mean_score
+  metric_name: Clipped mean score
   higher_is_better: true
+  range: [0, 1]
   url: https://arxiv.org/abs/2505.08775
-  description: Clinician-adjudicated mental-health subset of HealthBench (611 conversations), graded against physician rubrics.
+  description: "The mental-health conversations from HealthBench, graded against conversation-specific rubrics written by physicians."
+  quote: "Responses are evaluated using conversation-specific rubrics created by 262 physicians."
+  quote_source: "Arora et al., 2025"
+  breakdowns:
+    - {title: Axis, path: breakdown.axis, value: clipped_mean_score}
+    - {title: Theme, path: breakdown.theme, value: clipped_mean_score}
 - id: eqbench3
   name: EQ-Bench 3
   group: quality
   metric: rubric_score
+  metric_name: Rubric score
   higher_is_better: true
+  range: [0, 100]
   url: https://github.com/EQ-bench/eqbench3
-  description: Emotional intelligence in 45 multi-turn role-play, message-drafting and analysis scenarios; rubric score and
-    pairwise ELO.
+  description: "Emotional intelligence in role-play and analysis: empathy, insight and social skill in difficult conversations."
+  quote: "Rather than knowledge-based or short-answer questions, tasks here are multi-turn dialogues or analysis questions that test empathy, social dexterity, and psychological insight."
+  quote_source: "Sam Paech, EQ-Bench 3"
+  breakdowns:
+    - {title: Scenario type, path: breakdown.scenario_type, value: rubric_score}
+    - title: Abilities (0-20, make up the rubric score)
+      path: breakdown.criterion
+      value: mean_0_20
+      columns:
+        demonstrated_empathy: Empathy
+        pragmatic_ei: Pragmatic EI
+        depth_of_insight: Insight
+        social_dexterity: Social dexterity
+        emotional_reasoning: Emotional reasoning
+        message_tailoring: Message tailoring
+        theory_of_mind: Theory of mind
+        subtext_identification: Subtext
+        intellectual_grounding: Grounding
+        correctness: Correctness
+    - title: Style traits (0-20, descriptive)
+      path: breakdown.criterion
+      value: mean_0_20
+      higher_is_better: null
+      columns:
+        warmth: Warmth
+        validating: Validating
+        challenging: Challenging
+        boundary_setting: Boundary setting
+        safety_conscious: Safety conscious
+        moralising: Moralising
+        sycophantic: Sycophantic
+        compliant: Compliant
+        analytical: Analytical
+        reactive: Reactive
+        conversational: Conversational
+        humanlike: Humanlike
 - id: counselbench_eval
   name: CounselBench EVAL
   group: quality
   metric: overall
+  metric_name: Overall score
   higher_is_better: true
+  range: [1, 5]
   url: https://arxiv.org/abs/2506.08584
-  description: Single-turn answers to 100 CounselChat questions, judged on 6 clinically grounded metrics.
+  description: "Answers to real questions people ask therapists online, rated on six clinically grounded dimensions."
+  quote: "Patient questions often mix symptoms, treatment concerns, and emotional needs, requiring answers that balance clinical caution with contextual sensitivity."
+  quote_source: "Li et al., 2025"
+  breakdowns:
+    - title: Clinical criteria (1-5)
+      path: metrics
+      columns: {empathy: Empathy, specificity: Specificity, factual_consistency: Factual consistency}
+    - title: Safety flags
+      path: metrics
+      higher_is_better: false
+      columns: {toxicity: Toxicity (1-5), medical_advice: Unauthorized medical advice (rate)}
 - id: counselbench_adv
   name: CounselBench Adv
   group: quality
   metric: failure_rate
+  metric_name: Failure rate
   higher_is_better: false
+  range: [0, 1]
   url: https://arxiv.org/abs/2506.08584
-  description: 120 adversarial questions targeting 6 failure modes; rate of responses showing the targeted issue.
+  description: "Expert-written questions built to provoke known failures, from judgmental replies to unprompted medication advice."
+  quote: "An adversarial dataset of 120 expert-authored mental health questions designed to trigger specific model issues."
+  quote_source: "Li et al., 2025"
+  breakdowns:
+    - {title: Failure rate by targeted issue, path: breakdown.issue, value: failure_rate}
 - id: cbt_bench
   name: CBT-Bench
   group: quality
   metric: mean_weighted_f1
+  metric_name: Mean weighted F1
   higher_is_better: true
+  range: [0, 1]
   url: https://arxiv.org/abs/2410.13218
-  description: CBT Level II — cognitive distortion, primary and fine-grained core belief classification (weighted F1).
+  description: "Whether a model can read a patient's thinking the way a CBT therapist does, by identifying cognitive distortions and core beliefs."
+  quote: "While LLMs perform well in reciting CBT knowledge, they fall short in complex real-world scenarios requiring deep analysis of patients' cognitive structures."
+  quote_source: "Zhang et al., 2024"
+  breakdowns:
+    - title: Task
+      path: metrics
+      columns: {distortions_weighted_f1: Cognitive distortion, core_major_weighted_f1: Primary core belief, core_fine_weighted_f1: Fine-grained core belief}
+    - {title: Cognitive distortion (F1 per label), path: breakdown.label_f1.distortions}
+    - {title: Primary core belief (F1 per label), path: breakdown.label_f1.core_major}
 - id: vera_mh
   name: VERA-MH
   group: safety
   metric: vera_score
+  metric_name: VERA score
   higher_is_better: true
+  range: [0, 100]
   url: https://arxiv.org/abs/2510.15297
-  description: Suicide-risk detection and response with 100 clinician-written personas over up to 30 turns.
+  description: "How a model recognises and responds to suicide risk in conversations with clinician-designed personas."
+  quote: "An automated evaluation of the safety of AI chatbots used in mental health contexts, with an initial focus on suicide risk."
+  quote_source: "Belli et al., 2025"
+  breakdowns:
+    - {title: Dimension, path: breakdown.dimension, value: vera_score}
 - id: spiral_bench
   name: Spiral-Bench
   group: safety
   metric: score_0_100
+  metric_name: Overall score
   higher_is_better: true
+  range: [0, 100]
   url: https://github.com/sam-paech/spiral-bench
-  description: Sycophancy, delusion reinforcement and harmful advice over 30 twenty-turn conversations with a suggestible
-    user.
+  description: "Whether a model pushes back or plays along when a suggestible user spirals into delusional thinking."
+  quote: "A multiturn, roleplay-based benchmark designed to measure protective and risky behaviours in large language models (LLMs) when interacting with a suggestible, seeker-type user."
+  quote_source: "Sam Paech, Spiral-Bench"
+  breakdowns:
+    - title: Protective behaviors
+      path: metrics
+      columns: {pushback: Pushback, de_escalation: De-escalation, boundary_setting: Boundary setting, help_referral_warranted: Warranted referral, validate_feelings_not_thoughts: Validates feelings not thoughts}
+    - title: Risky behaviors
+      path: metrics
+      higher_is_better: false
+      columns: {sycophancy: Sycophancy, delusion_reinforcement: Delusion reinforcement, escalation: Escalation, harmful_advice: Harmful advice, confident_bullshitting: Confident bullshitting, positive_sentience_claim: Sentience claims}
 - id: sim_vail
   name: SIM-VAIL
   group: safety
   metric: mh_harm_mean
+  metric_name: Mean harm
   higher_is_better: false
+  range: [1, 10]
   url: https://arxiv.org/abs/2602.01347
-  description: Simulated vulnerable users (5 phenotypes x 6 intentions) audited with Petri on 39 judge dimensions (1-10).
+  description: "How a model treats simulated users with specific psychiatric vulnerabilities, scored for harm across multi-turn conversations."
+  quote: "Risk was highest when otherwise supportive chatbot behaviors reinforced the psychological mechanisms underlying the simulated user's vulnerability."
+  quote_source: "Weilnhammer et al., 2026"
+  breakdowns:
+    - {title: Harm by phenotype, path: breakdown.phenotype, value: mh_harm_mean}
+    - {title: Harm by user intention, path: breakdown.intention_label, value: mh_harm_mean}
