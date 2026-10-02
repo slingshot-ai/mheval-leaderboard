@@ -76,6 +76,21 @@ a,
   .menu-trigger:hover .link {
     text-decoration-color: currentColor;
   }
+  .button:hover {
+    opacity: 0.85;
+  }
+  .chip:hover {
+    background: var(--surface-component-hover);
+    color: var(--content-primary);
+  }
+  .scores tbody tr:hover,
+  .scores tbody tr:hover .model-col {
+    background-color: var(--surface-subtle);
+  }
+  .back:hover {
+    color: var(--content-primary);
+    transform: translateX(-2px);
+  }
 }
 :focus-visible {
   outline: 2px solid var(--bar-best);
@@ -242,6 +257,19 @@ footer {
 }
 .eyebrow {
   margin: 0 0 16px;
+}
+.back {
+  /* Sundial icon button: 24px icon in a 40px target, offset so the arrowhead aligns with the text edge */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: -8px 0 16px -12px;
+  color: var(--content-secondary);
+  transition:
+    color var(--motion-fast) var(--ease),
+    transform var(--motion-fast) var(--ease);
 }
 .lede {
   max-width: 72ch;

@@ -26,6 +26,7 @@ export default async function BenchmarkPage({ params }: Props) {
   return (
     <>
       <PageHeader
+        back={{ href: "/", label: "Back to the leaderboard" }}
         eyebrow={b.group === "quality" ? "Quality benchmark" : "Safety benchmark"}
         title={b.name}
         lede={b.description}

@@ -17,7 +17,11 @@ export function BarChart({ benchmark, models }: { benchmark: Benchmark; models: 
           const v = m.scores[benchmark.id];
           const share = Math.min(1, Math.max(0, (v - lo) / (hi - lo)));
           return (
-            <li key={m.id} className={i === 0 ? "best" : undefined} style={{ "--i": i } as React.CSSProperties}>
+            <li
+              key={m.id}
+              className={v === rows[0].scores[benchmark.id] ? "best" : undefined}
+              style={{ "--i": i } as React.CSSProperties}
+            >
               <div className="bar-label">
                 <ModelName model={m} detail={m.settings[benchmark.id]} />
               </div>
