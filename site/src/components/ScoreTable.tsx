@@ -15,7 +15,7 @@ export interface ScoreColumn {
 }
 
 // Sortable table, cells shaded by rank within each column with the best in bold. Descriptive columns (no better
-// direction) are left plain.
+// direction) and columns where every model ties are left plain.
 export function ScoreTable({ models, columns }: { models: Model[]; columns: ScoreColumn[] }) {
   const [sort, setSort] = useState({ key: columns[0].key, flip: false });
 
@@ -83,7 +83,8 @@ export function ScoreTable({ models, columns }: { models: Model[]; columns: Scor
                       –
                     </td>
                   );
-                if (c.higher_is_better === null)
+                const { min, max } = stats.get(c.key)!;
+                if (c.higher_is_better === null || min === max)
                   return (
                     <td key={c.key} className="num">
                       {show(c, v)}
