@@ -2,5 +2,5 @@ name: google/gemini-2.5-pro
 display_name: Gemini 2.5 Pro
 organization: Google
 access: public-api
-url: https://deepmind.google/models/gemini/pro/
+url: https://openrouter.ai/google/gemini-2.5-pro
 submitted_by: "@ziyi-zhu"

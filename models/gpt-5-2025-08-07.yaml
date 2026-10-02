@@ -2,5 +2,5 @@ name: gpt-5-2025-08-07
 display_name: GPT-5
 organization: OpenAI
 access: public-api
-url: https://platform.openai.com/docs/models/gpt-5
+url: https://developers.openai.com/api/docs/models/gpt-5
 submitted_by: "@ziyi-zhu"

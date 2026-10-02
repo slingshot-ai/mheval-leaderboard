@@ -1,0 +1,6 @@
+name: gpt-6-astra
+display_name: GPT-6 Astra
+organization: OpenAI
+access: public-api
+url: https://developers.openai.com/api/docs/models/gpt-6-astra
+submitted_by: "@ziyi-zhu"
