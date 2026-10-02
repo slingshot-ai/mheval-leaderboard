@@ -1,0 +1,6 @@
+name: anthropic/claude-opus-5.5
+display_name: Claude Opus 5.5
+organization: Anthropic
+access: public-api
+url: https://openrouter.ai/anthropic/claude-opus-5.5-20260921
+submitted_by: "@ziyi-zhu"

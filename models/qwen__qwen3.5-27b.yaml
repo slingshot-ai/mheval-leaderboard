@@ -2,5 +2,5 @@ name: qwen/qwen3.5-27b
 display_name: Qwen3.5-27B
 organization: Qwen
 access: open-weights
-url: https://huggingface.co/Qwen/Qwen3.5-27B
+url: https://openrouter.ai/qwen/qwen3.5-27b-20260224
 submitted_by: "@ziyi-zhu"

@@ -48,7 +48,7 @@ submission/
    display_name: Model Name        # shown on the leaderboard; optional, defaults to `name`
    organization: Example Labs
    access: open-weights            # open-weights | public-api | private
-   url: https://huggingface.co/org/model-name
+   url: https://openrouter.ai/org/model-name-20260101  # provider page for the version run
    submitted_by: "@your-github-handle"
    ```
 4. Optionally run the checks locally: `pip install pyyaml && python scripts/validate.py`.

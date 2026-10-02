@@ -2,5 +2,5 @@ name: gpt-4o-2024-08-06
 display_name: GPT-4o
 organization: OpenAI
 access: public-api
-url: https://platform.openai.com/docs/models/gpt-4o
+url: https://developers.openai.com/api/docs/models/gpt-4o
 submitted_by: "@ziyi-zhu"
