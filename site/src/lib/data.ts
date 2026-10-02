@@ -37,7 +37,8 @@ export interface Benchmark {
 
 export interface Model {
   id: string;
-  name: string;
+  name: string; // the model id as called, which names its results
+  displayName: string; // shown on the leaderboard; defaults to `name`
   organization: string;
   access: Access;
   url: string;
@@ -101,6 +102,7 @@ export const loadLeaderboard = cache((): Leaderboard => {
       const model: Model = {
         id,
         name: card.name,
+        displayName: card.display_name || card.name,
         organization: card.organization,
         access: card.access as Access,
         url: card.url,

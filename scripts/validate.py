@@ -56,6 +56,9 @@ def check_card(path: Path) -> list[str]:
         return [f"invalid YAML: {e}"]
     errors = [f"missing `{f}`" for f in CARD_FIELDS if not card.get(f)]
     errors += [f"`{f}` is still TODO" for f in CARD_FIELDS if str(card.get(f, "")).strip() == "TODO"]
+    if "display_name" in card and (not isinstance(card["display_name"], str)
+                                   or card["display_name"].strip() in ("", "TODO")):
+        errors.append("`display_name` must be the model's name as shown on the leaderboard (or omit it to use `name`)")
     if card.get("access") and card["access"] != "TODO" and card["access"] not in ACCESS:
         errors.append(f"`access` must be one of {sorted(ACCESS)}")
     if card.get("name") and model_id(str(card["name"])) != path.stem:
