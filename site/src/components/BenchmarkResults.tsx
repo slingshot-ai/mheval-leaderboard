@@ -14,7 +14,7 @@ export function BenchmarkResults({ benchmark: b, models }: { benchmark: Benchmar
         <section className="block first">
           <Figure
             title="Headline score"
-            caption={`Bars span the metric's full ${lo}–${hi} scale; ${b.higher_is_better ? "higher" : "lower"} is better. Model settings used for each run are listed under its name.`}
+            caption={`Bars span the metric's full ${lo}–${hi} scale; ${b.higher_is_better ? "higher" : "lower"} is better. Hover the info icon for settings a model ran with.`}
           >
             <BarChart benchmark={b} models={visible} />
           </Figure>

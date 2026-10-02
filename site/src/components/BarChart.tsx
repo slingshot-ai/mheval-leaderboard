@@ -23,7 +23,7 @@ export function BarChart({ benchmark, models }: { benchmark: Benchmark; models: 
               style={{ "--i": i } as React.CSSProperties}
             >
               <div className="bar-label">
-                <ModelName model={m} detail={m.settings[benchmark.id]} />
+                <ModelName model={m} settings={m.settings[benchmark.id]} />
               </div>
               <div className="bar-track" role="img" aria-label={`${formatScore(v, scale)} on a ${lo}–${hi} scale`}>
                 <div className="bar-fill" style={{ "--share": share } as React.CSSProperties} />

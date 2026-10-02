@@ -43,7 +43,7 @@ export interface Model {
   access: Access;
   url: string;
   scores: Record<string, number>; // benchmark id -> headline metric
-  settings: Record<string, string>; // benchmark id -> target model params, e.g. "reasoning_effort=high"
+  settings: Record<string, Record<string, string>>; // benchmark id -> target model params, e.g. { reasoning_effort: "high" }
   views: Record<string, Record<string, number>[]>; // benchmark id -> per view, column key -> value
 }
 
@@ -118,9 +118,9 @@ export const loadLeaderboard = cache((): Leaderboard => {
         if (typeof score !== "number") continue;
         const meta = (result.meta ?? {}) as { date?: string; roles?: { target?: { params?: Json } } };
         model.scores[spec.id] = score;
-        model.settings[spec.id] = Object.entries(meta.roles?.target?.params ?? {})
-          .map(([k, v]) => `${k}=${v}`)
-          .join(", ");
+        model.settings[spec.id] = Object.fromEntries(
+          Object.entries(meta.roles?.target?.params ?? {}).map(([k, v]) => [k, String(v)]),
+        );
         model.views[spec.id] = (spec.breakdowns ?? []).map((view) => extract(result, view));
         if (meta.date && meta.date > updated) updated = meta.date;
       }
