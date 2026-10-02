@@ -45,6 +45,7 @@ submission/
 3. Fill in `models/<model>.yaml` and replace every `TODO`:
    ```yaml
    name: org/model-name            # model id as called (API id or Hugging Face repo)
+   display_name: Model Name        # shown on the leaderboard; optional, defaults to `name`
    organization: Example Labs
    access: open-weights            # open-weights | public-api | private
    url: https://huggingface.co/org/model-name
@@ -67,7 +68,7 @@ Then open a new pull request. To update an existing result, replace its file the
 
 Every pull request must pass `scripts/validate.py`, which checks each model card and result file:
 
-- **Model card:** every field is filled in, `access` is one of `open-weights`, `public-api` or `private`, and the file name matches the model id.
+- **Model card:** every field is filled in (`display_name` is optional), `access` is one of `open-weights`, `public-api` or `private`, and the file name matches the model id.
 - **Result files:** each sits at `results/<model>/<task>.json` for a known benchmark, has a model card, and contains the benchmark's headline metric.
 - **Released task configuration:** the result was produced by a released mheval version, and its task configuration matches that release exactly (a fingerprint of the task's files).
 - **Default judges and simulators:** the run used the task's defaults.
