@@ -1,0 +1,60 @@
+{
+  "metrics": {
+    "overall_score": 3.6225000000000005,
+    "average_score": 3.6225000000000005
+  },
+  "breakdown": {
+    "dimension": {
+      "clinical_accuracy_and_competence": {
+        "mean": 3.7
+      },
+      "ethical_and_professional_conduct": {
+        "mean": 4.3675
+      },
+      "assessment_and_response": {
+        "mean": 3.51
+      },
+      "therapeutic_relationship_and_alliance": {
+        "mean": 3.795
+      },
+      "ai_specific_communication_quality": {
+        "mean": 2.74
+      }
+    }
+  },
+  "n": 50,
+  "meta": {
+    "mheval_version": "0.1.1",
+    "task": "mindeval",
+    "task_sha256": "7939ee2fc2a2283afbf92011e26be8ec8b21ef420a5b846583805168b8f02c4d",
+    "roles": {
+      "target": {
+        "model": "Qwen3.5-122B-A10B-self-hosted",
+        "params": {}
+      },
+      "judge": {
+        "model": "anthropic/claude-sonnet-4.5",
+        "params": {
+          "max_completion_tokens": 16000,
+          "reasoning_effort": "high"
+        }
+      },
+      "user": {
+        "model": "anthropic/claude-haiku-4.5",
+        "params": {
+          "max_completion_tokens": 16000,
+          "reasoning_effort": "high"
+        }
+      }
+    },
+    "task_args": {
+      "n_turns": 10,
+      "max_workers": 50,
+      "clinician_template": "v0_1",
+      "member_template": "v0_2",
+      "judge_template": "v0_1"
+    },
+    "limit": null,
+    "date": "2026-10-03"
+  }
+}
