@@ -169,7 +169,10 @@
   quote: "There is no single best policy for user interaction. One user loves pushback; another wants warmth and validation."
   quote_source: "Sam Paech, EQ-Bench 4"
   breakdowns:
-    - {title: Behavioural traits (0-10, neither better nor worse when higher), path: breakdown.trait, value: score, higher_is_better: null}
+    - title: Behavioural traits (0-10, neither better nor worse when higher)
+      path: breakdown.trait
+      value: score
+      higher_is_better: null
 - id: counselbench_eval
   name: CounselBench EVAL
   group: quality
