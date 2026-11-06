@@ -1,0 +1,77 @@
+{
+  "metrics": {
+    "elo": 1088.66,
+    "elo_ci_low": 1078.66,
+    "elo_ci_high": 1099.6,
+    "pairwise_win_fraction": 0.5210509950248756
+  },
+  "breakdown": {
+    "trait": {
+      "analytical": {
+        "score": 5.867
+      },
+      "boundary_setting": {
+        "score": 2.292
+      },
+      "challenge_propensity": {
+        "score": 3.108
+      },
+      "clinical_register_propensity": {
+        "score": 5.058
+      },
+      "directive_advice_orientation": {
+        "score": 5.258
+      },
+      "escalation_containment": {
+        "score": 5.383
+      },
+      "frame_capture": {
+        "score": 7.575
+      },
+      "interpretive_boldness": {
+        "score": 4.975
+      },
+      "native_frame_adaptation": {
+        "score": 6.767
+      },
+      "naturalness_authenticity": {
+        "score": 5.233
+      },
+      "validation_propensity": {
+        "score": 8.208
+      },
+      "yielding_propensity": {
+        "score": 7.942
+      }
+    }
+  },
+  "n": 120,
+  "n_unfinished": 0,
+  "n_comparisons": 536,
+  "meta": {
+    "mheval_version": "0.1.5",
+    "task": "eqbench4",
+    "task_sha256": "f6755c3376cfb54162684975a70466cbc2f1e37e8dedda2da40040b78040185d",
+    "roles": {
+      "target": {
+        "model": "qwen/qwen3.5-27b",
+        "params": {}
+      },
+      "judge": {
+        "model": "claude-opus-4-8",
+        "params": {}
+      },
+      "user": {
+        "model": "google/gemini-3.1-pro-preview",
+        "params": {}
+      }
+    },
+    "task_args": {
+      "parallel": 128,
+      "holdout": null,
+      "google_auth": true
+    },
+    "limit": null,
+    "date": "2026-11-06"
+  }
+}
