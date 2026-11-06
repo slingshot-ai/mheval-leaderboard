@@ -53,6 +53,21 @@
         assessment_and_response: Assessment and response
         therapeutic_relationship_and_alliance: Therapeutic alliance
         ai_specific_communication_quality: AI communication
+- id: mindeval2
+  name: MindEval 2
+  group: quality
+  metric: mhqr
+  metric_name: MHQR (weighted severity)
+  higher_is_better: false
+  range: [0, 10]
+  url: https://arxiv.org/abs/2610.22314
+  description: "How a model holds up as a therapist over three sessions with a simulated patient who remembers the earlier ones, with every reply checked for clinical issues and weighted by their severity."
+  quote: "Guidance calibration remains the dominant failure mode across all models, accounting for most of the quality gap."
+  quote_source: "Mendonça et al., 2026"
+  breakdowns:
+    - {title: Share of replies by severity, path: breakdown.severity, value: rate, higher_is_better: null}
+    - {title: Share of replies flagged per issue, path: breakdown.issue, value: rate}
+    - {title: MHQR by session, path: breakdown.session, value: mhqr}
 - id: healthbench_psych
   name: HealthBench-Psych
   group: quality
