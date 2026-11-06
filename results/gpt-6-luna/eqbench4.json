@@ -1,0 +1,76 @@
+{
+  "metrics": {
+    "elo": 1181.81,
+    "elo_ci_low": 1170.61,
+    "elo_ci_high": 1194.54,
+    "pairwise_win_fraction": 0.5051784160139251
+  },
+  "breakdown": {
+    "trait": {
+      "analytical": {
+        "score": 5.692
+      },
+      "boundary_setting": {
+        "score": 4.575
+      },
+      "challenge_propensity": {
+        "score": 4.192
+      },
+      "clinical_register_propensity": {
+        "score": 4.392
+      },
+      "directive_advice_orientation": {
+        "score": 6.467
+      },
+      "escalation_containment": {
+        "score": 6.817
+      },
+      "frame_capture": {
+        "score": 5.35
+      },
+      "interpretive_boldness": {
+        "score": 4.133
+      },
+      "native_frame_adaptation": {
+        "score": 7.058
+      },
+      "naturalness_authenticity": {
+        "score": 6.108
+      },
+      "validation_propensity": {
+        "score": 6.408
+      },
+      "yielding_propensity": {
+        "score": 6.167
+      }
+    }
+  },
+  "n": 120,
+  "n_comparisons": 383,
+  "meta": {
+    "mheval_version": "0.1.4",
+    "task": "eqbench4",
+    "task_sha256": "6fb059604531f1378494fdc9d1def8e52b64837829d6d3b9cb925da90fcf7305",
+    "roles": {
+      "target": {
+        "model": "gpt-6-luna",
+        "params": {}
+      },
+      "judge": {
+        "model": "claude-opus-4-8",
+        "params": {}
+      },
+      "user": {
+        "model": "google/gemini-3.1-pro-preview",
+        "params": {}
+      }
+    },
+    "task_args": {
+      "parallel": 128,
+      "holdout": null,
+      "google_auth": true
+    },
+    "limit": null,
+    "date": "2026-11-06"
+  }
+}
