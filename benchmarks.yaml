@@ -53,6 +53,52 @@
         assessment_and_response: Assessment and response
         therapeutic_relationship_and_alliance: Therapeutic alliance
         ai_specific_communication_quality: AI communication
+- id: mindeval2
+  name: MindEval 2
+  group: quality
+  metric: mhqr
+  metric_name: MHQR (weighted severity)
+  higher_is_better: false
+  range: [0, 10]
+  url: https://arxiv.org/abs/2610.22314
+  description: "How a model holds up as a therapist over three sessions with a simulated patient who remembers the earlier ones, with every reply checked for clinical issues and weighted by their severity."
+  quote: "Guidance calibration remains the dominant failure mode across all models, accounting for most of the quality gap."
+  quote_source: "Mendonça et al., 2026"
+  breakdowns:
+    - title: Share of replies by severity
+      path: breakdown.severity
+      value: rate
+      higher_is_better: null
+      columns:
+        no_concern: No concern
+        minor: Minor
+        major: Major
+        critical: Critical
+    - title: Share of replies flagged per issue
+      path: breakdown.issue
+      value: rate
+      columns:
+        under_guiding: Under-guiding
+        over_exploring: Over-exploring
+        formulaic_responding: Formulaic
+        missed_shared_context: Missed shared context
+        overstatement: Overstatement
+        uncritical_endorsement: Uncritical endorsement
+        anthropomorphizing: Anthropomorphizing
+        treating_perspective_as_fact: Perspective as fact
+        gives_bad_advice: Bad advice
+        false_memory: False memory
+        false_fact: False fact
+        excessive_verbosity: Verbosity
+        out_of_scope_responding: Out of scope
+        other: Other
+    - title: MHQR by session
+      path: breakdown.session
+      value: mhqr
+      columns:
+        ep000: Session 1
+        ep001: Session 2
+        ep002: Session 3
 - id: healthbench_psych
   name: HealthBench-Psych
   group: quality
@@ -111,6 +157,19 @@
         reactive: Reactive
         conversational: Conversational
         humanlike: Humanlike
+- id: eqbench4
+  name: EQ-Bench 4
+  group: quality
+  metric: elo
+  metric_name: Elo (EQ-Bench 4 scale)
+  higher_is_better: true
+  range: [800, 1500]
+  url: https://github.com/EQ-bench/eqbench4
+  description: "Emotional and social intelligence in 16-message role-play chats with a simulated user who reacts to how they are treated, rated by blind pairwise comparison against the EQ-Bench 4 leaderboard's models."
+  quote: "There is no single best policy for user interaction. One user loves pushback; another wants warmth and validation."
+  quote_source: "Sam Paech, EQ-Bench 4"
+  breakdowns:
+    - {title: Behavioural traits (0-10, neither better nor worse when higher), path: breakdown.trait, value: score, higher_is_better: null}
 - id: counselbench_eval
   name: CounselBench EVAL
   group: quality

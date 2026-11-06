@@ -3,7 +3,7 @@
 [![CI](https://github.com/slingshot-ai/mheval-leaderboard/actions/workflows/ci.yml/badge.svg)](https://github.com/slingshot-ai/mheval-leaderboard/actions/workflows/ci.yml)
 [![Deploy](https://github.com/slingshot-ai/mheval-leaderboard/actions/workflows/deploy.yml/badge.svg)](https://github.com/slingshot-ai/mheval-leaderboard/actions/workflows/deploy.yml)
 
-**🏆 Leaderboard: <https://slingshot-ai.github.io/mheval-leaderboard/>**
+**🏆 Leaderboard: <https://mheval.slingshotai.com/>**
 
 Community results for language models on therapy and mental-health benchmarks, produced with the [Mental Health Evaluation Harness](https://github.com/slingshot-ai/mheval) (`mheval`). Anyone can submit results for any model, including private ones, on any subset of benchmarks, and add more benchmarks later. Each submission is a pull request; CI validates it, and the site rebuilds when it is merged.
 
