@@ -1,0 +1,139 @@
+{
+  "metrics": {
+    "distortions_weighted_f1": 0.47426679067665917,
+    "distortions_weighted_precision": 0.4649389918105852,
+    "distortions_weighted_recall": 0.5149051490514905,
+    "distortions_format_rate": 1.0,
+    "distortions_weighted_f1_strict": 0.47426679067665917,
+    "distortions_weighted_precision_strict": 0.4649389918105852,
+    "distortions_weighted_recall_strict": 0.5149051490514905,
+    "distortions_format_rate_strict": 1.0,
+    "core_major_weighted_f1": 0.7807193060263046,
+    "core_major_weighted_precision": 0.7802377525976679,
+    "core_major_weighted_recall": 0.8052325581395349,
+    "core_major_format_rate": 1.0,
+    "core_major_weighted_f1_strict": 0.7807193060263046,
+    "core_major_weighted_precision_strict": 0.7802377525976679,
+    "core_major_weighted_recall_strict": 0.8052325581395349,
+    "core_major_format_rate_strict": 1.0,
+    "core_fine_weighted_f1": 0.5980193509784836,
+    "core_fine_weighted_precision": 0.5027348310607385,
+    "core_fine_weighted_recall": 0.7582938388625592,
+    "core_fine_format_rate": 1.0,
+    "core_fine_weighted_f1_strict": 0.5980193509784836,
+    "core_fine_weighted_precision_strict": 0.5027348310607385,
+    "core_fine_weighted_recall_strict": 0.7582938388625592,
+    "core_fine_format_rate_strict": 1.0,
+    "mean_weighted_f1": 0.6176684825604825,
+    "mean_weighted_f1_strict": 0.6176684825604825
+  },
+  "breakdown": {
+    "label_f1": {
+      "distortions": {
+        "all-or-nothing thinking": 0.5087719298245614,
+        "overgeneralization": 0.3373493975903614,
+        "mental filter": 0.0,
+        "should statements": 0.7222222222222222,
+        "labeling": 0.4175824175824176,
+        "personalization": 0.5135135135135135,
+        "magnification": 0.32,
+        "emotional reasoning": 0.34782608695652173,
+        "mind reading": 0.7096774193548387,
+        "fortune-telling": 0.5309734513274337
+      },
+      "core_major": {
+        "helpless": 0.8175675675675675,
+        "unlovable": 0.8130841121495327,
+        "worthless": 0.6666666666666666
+      },
+      "core_fine": {
+        "I am incompetent": 0.5581395348837209,
+        "I am helpless": 0.6391752577319587,
+        "I am powerless, weak, vulnerable": 0.5925925925925926,
+        "I am a victim": 0.5945945945945946,
+        "I am needy": 0.2857142857142857,
+        "I am trapped": 0.5714285714285714,
+        "I am out of control": 0.5294117647058824,
+        "I am a failure, loser": 0.6415094339622641,
+        "I am defective": 0.6190476190476191,
+        "I am unlovable": 0.6101694915254238,
+        "I am unattractive": 0.6666666666666666,
+        "I am undesirable, unwanted": 0.4745762711864407,
+        "I am bound to be rejected": 0.7575757575757576,
+        "I am bound to be abandoned": 0.5333333333333333,
+        "I am bound to be alone": 0.5769230769230769,
+        "I am worthless, waste": 0.5714285714285714,
+        "I am immoral": 0.6,
+        "I am bad - dangerous, toxic, evil": 0.6153846153846154,
+        "I don\u2019t deserve to live": 0.875
+      }
+    },
+    "label_f1_strict": {
+      "distortions": {
+        "all-or-nothing thinking": 0.5087719298245614,
+        "overgeneralization": 0.3373493975903614,
+        "mental filter": 0.0,
+        "should statements": 0.7222222222222222,
+        "labeling": 0.4175824175824176,
+        "personalization": 0.5135135135135135,
+        "magnification": 0.32,
+        "emotional reasoning": 0.34782608695652173,
+        "mind reading": 0.7096774193548387,
+        "fortune-telling": 0.5309734513274337
+      },
+      "core_major": {
+        "helpless": 0.8175675675675675,
+        "unlovable": 0.8130841121495327,
+        "worthless": 0.6666666666666666
+      },
+      "core_fine": {
+        "I am incompetent": 0.5581395348837209,
+        "I am helpless": 0.6391752577319587,
+        "I am powerless, weak, vulnerable": 0.5925925925925926,
+        "I am a victim": 0.5945945945945946,
+        "I am needy": 0.2857142857142857,
+        "I am trapped": 0.5714285714285714,
+        "I am out of control": 0.5294117647058824,
+        "I am a failure, loser": 0.6415094339622641,
+        "I am defective": 0.6190476190476191,
+        "I am unlovable": 0.6101694915254238,
+        "I am unattractive": 0.6666666666666666,
+        "I am undesirable, unwanted": 0.4745762711864407,
+        "I am bound to be rejected": 0.7575757575757576,
+        "I am bound to be abandoned": 0.5333333333333333,
+        "I am bound to be alone": 0.5769230769230769,
+        "I am worthless, waste": 0.5714285714285714,
+        "I am immoral": 0.6,
+        "I am bad - dangerous, toxic, evil": 0.6153846153846154,
+        "I don\u2019t deserve to live": 0.875
+      }
+    }
+  },
+  "n": 442,
+  "meta": {
+    "mheval_version": "0.1.5",
+    "task": "cbt_bench",
+    "task_sha256": "5e4d913e6c44427587587ea1b7b88633598021cd7e85c73ec7d0e44afcf466e4",
+    "roles": {
+      "target": {
+        "model": "google/gemini-4-argon",
+        "params": {
+          "temperature": 0.0,
+          "max_tokens": 2048
+        }
+      },
+      "judge": {
+        "model": "gpt-4o",
+        "params": {
+          "temperature": 0.7
+        }
+      }
+    },
+    "task_args": {
+      "shot": 0,
+      "workers": 16
+    },
+    "limit": null,
+    "date": "2026-11-10"
+  }
+}
