@@ -1,0 +1,6 @@
+name: google/gemini-4-argon
+display_name: Gemini 4 Argon
+organization: Google
+access: public-api
+url: https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/4-argon
+submitted_by: "@ziyi-zhu"
